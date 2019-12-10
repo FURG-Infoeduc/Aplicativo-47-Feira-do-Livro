@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "765448086728",
+    "firebase_url": "https://feira-do-livro-508ff.firebaseio.com",
+    "project_id": "feira-do-livro-508ff",
+    "storage_bucket": "feira-do-livro-508ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765448086728:android:930f1d0e9409a87ccff1fd",
+        "android_client_info": {
+          "package_name": "com.example.feira_do_livro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765448086728-fuc3dq34t0b7aqipf8o44p2fjm41p6hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpJxCG722nhPeUr2KJEQq4FUSyB3g3dBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765448086728-fuc3dq34t0b7aqipf8o44p2fjm41p6hq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
