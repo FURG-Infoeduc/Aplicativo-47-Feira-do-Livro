@@ -57,7 +57,7 @@ flutter_icons:
 flutter:
   assets: 
       [assets/images/logo.png,
-      assets/images/logo2.png,
+       assets/images/logo2.png,
       assets/images/elacy.png,
         assets/images/furg.png, 
         assets/images/panvel.png,

@@ -14,6 +14,7 @@ class Confirmacao extends StatefulWidget {
   createState() => _ConfirmacaoState();
 }
 
+
 class _ConfirmacaoState extends State<Confirmacao> {
   final definitions = ColorsDefinitions();
 

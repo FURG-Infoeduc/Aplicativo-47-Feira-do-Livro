@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../definitions/colors.dart';
 import '../definitions/images.dart';
-import '../definitions/text.dart';
 
 class Splash {
   final definitions = ColorsDefinitions();

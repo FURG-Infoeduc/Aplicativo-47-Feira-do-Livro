@@ -29,7 +29,7 @@ class _DesenvolvedoresState extends State<Desenvolvedores> {
                     margin: EdgeInsets.only(
                         bottom: 2.0, top: 2.0, right: 10.0, left: 10.0),
                     child: Text(
-                      "Aplicativo produzido na disciplina de Atividade de Integração Currícular II, do curso de Sistemas de Informação da Universidade Federal do Rio Grande - FURG, cuja disciplina é orientada pelas professores Átila Astor Weiss, Luciane Baldassari, Pedro de Botelho Marcos,  e Regina Barwaldt.",
+                      "Aplicativo produzido na disciplina de Atividade de Integração Currícular II, do curso de Sistemas de Informação da Universidade Federal do Rio Grande - FURG, cuja disciplina é orientada pelos professores Átila Astor Weiss, Luciane Baldassari, Pedro de Botelho Marcos,  e Regina Barwaldt.",
                       style: TextStyle(
                         color: definitions.obterDrawerTextColor(),
                         fontSize: 20.0,
