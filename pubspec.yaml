@@ -56,9 +56,10 @@ flutter_icons:
 # The following section is specific to Flutter.
 flutter:
   assets: 
-      [assets/images/logo.png,
-       assets/images/logo2.png,
-      assets/images/elacy.png,
+      [
+        assets/images/logo.png,
+        assets/images/logo2.png,
+        assets/images/elacy.png,
         assets/images/furg.png, 
         assets/images/panvel.png,
         assets/images/porto.png, 

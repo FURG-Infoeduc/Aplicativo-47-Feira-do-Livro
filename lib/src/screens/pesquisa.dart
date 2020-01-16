@@ -145,7 +145,7 @@ class DataSearch extends SearchDelegate<String> {
       if (audioPlayer != null) {
         audioPlayer.stop();
       }
-      audioPlayer = await AudioCache().play('audio/'+audio+'.mp3', volume: 4.0);
+      audioPlayer = await AudioCache().play('audio/'+audio+'.mp3', volume: 5.0);
       play = audio;
     } else {
       if (audioPlayer != null) {

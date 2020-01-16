@@ -14,7 +14,7 @@ import '../sources/sqlite.dart';
 class FirebaseJson {
   Future<RootModel> getData() async {
     Response response =
-        await get('https://feira-do-livro-6baa6.firebaseio.com/.json');
+        await get('https://feira-do-livro-508ff.firebaseio.com/.json');
     RootModel model = RootModel.fromJson(json.decode(response.body));
     return model;
   }

@@ -15,6 +15,7 @@ class Confirmacao extends StatefulWidget {
 }
 
 
+
 class _ConfirmacaoState extends State<Confirmacao> {
   final definitions = ColorsDefinitions();
 
@@ -28,36 +29,49 @@ class _ConfirmacaoState extends State<Confirmacao> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(left: 25),
-            width: MediaQuery.of(context).size.width / 1.2,
-            height: 70,
-            decoration: BoxDecoration(
-              color: definitions.obterLoginColor(),
-              borderRadius: BorderRadius.all(Radius.circular(40)),
-            ),
-            child: FlatButton.icon(
-              icon: Icon(Icons.home),
-              label: Text(
-                "Acesso sem registro",
-                style: TextStyle(fontSize: 20.0),
+
+          Center(
+            child: Container(
+              child: CircleAvatar(
+                radius: 75,
+                backgroundImage:AssetImage('assets/images/logo.png'),
               ),
-              textColor: Colors.white,
-              onPressed: (() {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => Home(
-                      model: widget.model,
-                      onSignedOut: null,
-                      user: null,
-                    ),
-                  ),
-                );
-              }),
             ),
           ),
+          Padding(padding: EdgeInsets.only(bottom: 30.0),),
+
+          Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width / 1.2,
+              height: 70,
+              decoration: BoxDecoration(
+                color: definitions.obterLoginColor(),
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+              ),
+              child: FlatButton.icon(
+                icon: Icon(Icons.home),
+                label: Text(
+                  "Acesso sem registro",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                textColor: Colors.white,
+                onPressed: (() {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => Home(
+                        model: widget.model,
+                        onSignedOut: null,
+                        user: null,
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ),
+
           Padding(
-            padding: EdgeInsets.only(top: 50.0),
+            padding: EdgeInsets.only(top: 30.0),
           ),
           widget.model.referencia != null ? obterAcessoEmail(context, widget.onSignedOut) : Container(),
         ],
@@ -77,24 +91,25 @@ class _ConfirmacaoState extends State<Confirmacao> {
   }
 
   Widget obterAcessoEmail(BuildContext context, VoidCallback onSignedOut) {
-    return Container(
-      margin: EdgeInsets.only(left: 25),
-      width: MediaQuery.of(context).size.width / 1.2,
-      height: 70,
-      decoration: BoxDecoration(
-        color: definitions.obterLoginColor(),
-        borderRadius: BorderRadius.all(Radius.circular(40)),
-      ),
-      child: FlatButton.icon(
-        icon: Icon(Icons.email),
-        label: Text(
-          "Acesso com e-mail",
-          style: TextStyle(fontSize: 20.0),
+    return Center(
+      child: Container(
+        width: MediaQuery.of(context).size.width / 1.2,
+        height: 70,
+        decoration: BoxDecoration(
+          color: definitions.obterLoginColor(),
+          borderRadius: BorderRadius.all(Radius.circular(40)),
         ),
-        textColor: Colors.white,
-        onPressed: (() {
-          onSignedOut();
-        }),
+        child: FlatButton.icon(
+          icon: Icon(Icons.email),
+          label: Text(
+            "Acesso com e-mail",
+            style: TextStyle(fontSize: 20.0),
+          ),
+          textColor: Colors.white,
+          onPressed: (() {
+            onSignedOut();
+          }),
+        ),
       ),
     );
   }
