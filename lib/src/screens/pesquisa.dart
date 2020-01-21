@@ -140,12 +140,12 @@ class DataSearch extends SearchDelegate<String> {
     );
   }
 
-  Future playLocal(String audio) async {
+  Future<void> playLocal(String audio) async {
     if (play != audio) {
       if (audioPlayer != null) {
         audioPlayer.stop();
       }
-      audioPlayer = await AudioCache().play('audio/'+audio+'.mp3', volume: 5.0);
+      audioPlayer = await AudioCache(prefix: 'audio/').play(audio+'.mp3', volume: 5.0);
       play = audio;
     } else {
       if (audioPlayer != null) {

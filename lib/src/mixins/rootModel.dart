@@ -1,5 +1,4 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'dart:convert';
 import 'diasModel.dart';
 import 'eventosModel.dart';
 import 'feedModel.dart';

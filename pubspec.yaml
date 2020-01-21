@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
 
@@ -31,7 +32,6 @@ dependencies:
   url_launcher:
   toast:
   image_picker:
-  audioplayers:
   path_provider: 
   barcode_scan: 
   photo_view:
@@ -39,7 +39,8 @@ dependencies:
   cached_network_image:
   sqflite:
   path:
-
+  audioplayers:
+    
 dev_dependencies:
   flutter_launcher_icons: 
   flutter_test:
