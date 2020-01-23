@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import '../widgets/slivergrid.dart';
 import '../definitions/colors.dart';
-import '../mixins/patrocinadoresModel.dart';
 
 class Patrocinadores extends StatefulWidget {
-  final List<PatrocinadoresModel> patrocinadores;
-  Patrocinadores(this.patrocinadores) : super();
+  String patrocinadores;
+  Patrocinadores({this.patrocinadores});
   @override
   createState() => _PatrocinadoresState();
 }
@@ -13,22 +11,35 @@ class Patrocinadores extends StatefulWidget {
 class _PatrocinadoresState extends State<Patrocinadores> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    final definitions = ColorsDefinitions();
+    return Scaffold(
       appBar: new AppBar(
-        backgroundColor: ColorsDefinitions().obterAppBarColor(),
-        title: new Text('Patrocinadores'),
+        title: new Text('Apresentação feira do livro'),
+        backgroundColor: definitions.obterAppBarColor(),
       ),
-      body: Container(
-        margin: EdgeInsets.only(right: 5.0, left: 5.0),
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverGrid.count(
-              crossAxisCount: 2,
-              children: SliverGridBuild().obterPatrocinadorList(
-                  widget.patrocinadores, 15.0, context),
+      body: CustomScrollView(
+        cacheExtent: 10.0,
+        slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Container(
+                  margin: EdgeInsets.only(
+                      bottom: 10.0, top: 5.0, right: 20.0, left: 20.0),
+                  child: Text(
+                    widget.patrocinadores,
+                    style: TextStyle(
+                      color: definitions.obterDrawerTextColor(),
+                      fontSize: 17.0,
+                      height: 2.0,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
