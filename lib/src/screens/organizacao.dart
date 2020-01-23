@@ -27,12 +27,14 @@ class _OrganizacaoState extends State<Organizacao> {
     List<Widget> lista = List<Widget>();
     final definitions = ColorsDefinitions();
     for (OrganizacaoModel org in organizacao) {
+      var img = ImageDefinition().obterPersonImage(org.imagem);
       lista.add(
         ListTile(
-          contentPadding: EdgeInsets.all(10),
+          contentPadding: EdgeInsets.all(15),
           leading: CircleAvatar(
             radius: 30,
-            backgroundImage: ImageDefinition().obterPersonImage(org.imagem),
+            backgroundColor: Colors.transparent,
+            child: Image(image: img,),
           ),
           title: Text(
             org.nome,
