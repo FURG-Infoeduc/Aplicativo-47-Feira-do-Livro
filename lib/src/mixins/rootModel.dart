@@ -15,6 +15,7 @@ class RootModel {
   List<PatrocinadoresModel> patrocinadores = List<PatrocinadoresModel>();
   List<OrganizacaoModel> organizacao = List<OrganizacaoModel>();
   String sobre = '';
+  String patrocinador = '';
 
   RootModel(this.dias, this.eventos, this.feed, this.parceiros,
       this.patrocinadores, this.organizacao, this.referencia);
@@ -50,16 +51,6 @@ class RootModel {
         parceiros.add(ParceirosModel.fromJson(parsed, keys[a]));
       }
       parceiros.sort((a, b) => a.nome.compareTo(b.nome));
-    }
-    parsedEvent = parsedJson['patrocinadores'] != null
-        ? parsedJson['patrocinadores']
-        : null;
-    if (parsedEvent != null) {
-      keys = parsedEvent.keys.toList();
-      for (int a = 0; a < keys.length; a++) {
-        Map<String, dynamic> parsed = parsedEvent[keys[a]];
-        patrocinadores.add(PatrocinadoresModel.fromJson(parsed, keys[a]));
-      }
     }
 
     parsedEvent =
@@ -136,6 +127,17 @@ class RootModel {
       for (int a = 0; a < keys.length; a++) {
         Map<String, dynamic> parsed = parsedEvent[keys[a]];
         sobre = parsed['texto'] != null ? parsed['texto'] : '';
+      }
+    }
+
+    parsedEvent = mapeamento['patrocinadores'] != null
+        ? mapeamento['patrocinadores']
+        : null;
+    if (parsedEvent != null) {
+      keys = parsedEvent.keys.toList();
+      for (int a = 0; a < keys.length; a++) {
+        Map<String, dynamic> parsed = parsedEvent[keys[a]];
+        patrocinador = parsed['texto'] != null ? parsed['texto'] : '';
       }
     }
   }
