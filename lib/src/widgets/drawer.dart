@@ -189,6 +189,32 @@ class _SideMenuState extends State<SideMenu> {
         color: definitions.obterDrawerTextColor(),
         height: 5.0,
       ),
+
+      ListTile(
+        title: Text(
+          'Apresentação feira do livro',
+          style: TextStyle(
+            color: definitions.obterDrawerTextColor(),
+          ),
+        ),
+        leading: Icon(Icons.info),
+        onTap: () {
+          Navigator.of(context).pop();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) =>
+                  Patrocinadores(patrocinadores: widget.model.patrocinador),
+            ),
+          );
+        },
+      ),
+
+      Divider(
+        color: definitions.obterDrawerTextColor(),
+        height: 5.0,
+      ),
+
     ];
     if (widget.model.parceiros != null && widget.model.parceiros.length > 0) {
       lista.add(
@@ -218,37 +244,8 @@ class _SideMenuState extends State<SideMenu> {
           height: 5.0,
         ),
       );
-    }
-    if (widget.model.patrocinadores != null &&
-        widget.model.patrocinadores.length > 0) {
-      lista.add(
-        ListTile(
-          title: Text(
-            'Patrocinadores',
-            style: TextStyle(
-              color: definitions.obterDrawerTextColor(),
-            ),
-          ),
-          leading: Icon(Icons.people),
-          onTap: () {
-            Navigator.of(context).pop();
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) =>
-                    Patrocinadores(widget.model.patrocinadores),
-              ),
-            );
-          },
-        ),
-      );
-      lista.add(
-        Divider(
-          color: definitions.obterDrawerTextColor(),
-          height: 5.0,
-        ),
-      );
-    }
+    } 
+      
     if (widget.model.organizacao != null &&
         widget.model.organizacao.length > 0) {
       lista.add(

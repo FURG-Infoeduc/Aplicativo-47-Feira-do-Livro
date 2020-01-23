@@ -23,6 +23,16 @@ class _PatrocinadoresState extends State<Patrocinadores> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
+                
+                Center(
+                  child: Container(
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundImage:AssetImage('assets/images/danielaDelias.jpg'),
+                    ),
+                  ),
+                ),
+
                 Container(
                   margin: EdgeInsets.only(
                       bottom: 10.0, top: 5.0, right: 20.0, left: 20.0),
