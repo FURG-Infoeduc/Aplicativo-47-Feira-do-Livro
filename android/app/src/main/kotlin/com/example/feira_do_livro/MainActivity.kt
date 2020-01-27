@@ -1,4 +1,4 @@
-package com.example.feira_do_livro
+package com.feira_do_livro
 
 import android.os.Bundle
 
