@@ -22,8 +22,8 @@ class FeedListModel {
   List<FeedModel> feed = List<FeedModel>();
   FeedListModel(this.feed);
 
-  FeedListModel.fromSnapshot(DataSnapshot snapshot) {
-    String dados = jsonEncode(snapshot.value);
+  FeedListModel.fromSnapshot(DataSnapshot loading) {
+    String dados = jsonEncode(loading.value);
 
     Map<String, dynamic> mapeamento = json.decode(dados);
 

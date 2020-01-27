@@ -26,9 +26,9 @@ class FirebaseDatabaseSnapshot {
     DatabaseReference ref;
     RootModel model;
     ref = await FirebaseDatabase.instance.reference();
-    await ref.child('conteudo').once().then((DataSnapshot snapshot) async {
-      if (snapshot != null) {
-        String dados = jsonEncode(snapshot.value);
+    await ref.child('conteudo').once().then((DataSnapshot loading) async {
+      if (loading != null) {
+        String dados = jsonEncode(loading.value);
         Map<String, dynamic> mapeamento = json.decode(dados);
         model = RootModel.fromSnapshot(mapeamento);
         model.referencia = ref;
@@ -54,8 +54,8 @@ class FirebaseDatabaseSnapshot {
         .child('feed')
         .orderByKey()
         .once()
-        .then((DataSnapshot snapshot) {
-      model = FeedListModel.fromSnapshot(snapshot);
+        .then((DataSnapshot loading) {
+      model = FeedListModel.fromSnapshot(loading);
     });
     return model.feed;
   }
@@ -68,8 +68,8 @@ class FirebaseDatabaseSnapshot {
         .child('tokens')
         .child(user.uid)
         .once()
-        .then((DataSnapshot snapshot) {
-      if (snapshot.value == '-') {
+        .then((DataSnapshot loading) {
+      if (loading.value == '-') {
         retorno = false;
       } else {
         retorno = true;

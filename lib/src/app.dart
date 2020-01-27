@@ -20,15 +20,15 @@ class App extends StatelessWidget {
         ),
         home: FutureBuilder(
           future: FirebaseDatabaseSnapshot().getData(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
+          builder: (BuildContext context, AsyncSnapshot loading) {
             try {
-              if (snapshot.error != null) {
+              if (loading.error != null) {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
                     content: ListTile(
                       title: const Text('Algo saiu errado!'),
-                      subtitle: Text(snapshot.error.toString()),
+                      subtitle: Text(loading.error.toString()),
                     ),
                     actions: <Widget>[
                       FlatButton(
@@ -44,10 +44,10 @@ class App extends StatelessWidget {
                   ),
                 );
               }
-              if (snapshot.data == null) {
+              if (loading.data == null) {
                 return Splash().screen();
               } else {
-                return MappingPage(model: snapshot.data);
+                return MappingPage(model: loading.data);
               }
             } catch (e) {
               print(e);
