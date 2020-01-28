@@ -56,5 +56,5 @@ class SqlLite {
     final List<Map<String, dynamic>> maps = await db.query('feiralivro');
     // Convert the List<Map<String, dynamic> into a List<Dog>.
     return maps;
-  }//JsonModel(maps.isNotEmpty ? maps.first.values.first.toString() : '')
+  } //JsonModel(maps.isNotEmpty ? maps.first.values.first.toString() : '')
 }
